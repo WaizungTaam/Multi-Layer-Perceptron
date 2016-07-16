@@ -25,7 +25,7 @@ MLP::MLP(int dim_inut, int dim_hidden, int dim_output) {
   delta_ws_bias[0] = 0;
   delta_ws_bias[1] = 0;
 }
-MLP::MLP(std::vector<int> dim_layers) {
+MLP::MLP(const std::vector<int> & dim_layers) {
   int idx;
   for (idx = 0; idx < dim_layers.size() - 1; ++idx) {
     weights.push_back(Matrix(dim_layers[idx], dim_layers[idx + 1], 
@@ -40,7 +40,7 @@ MLP::MLP(std::vector<int> dim_layers) {
     delta_ws_bias[idx] = 0;
   }
 }
-MLP::MLP(std::initializer_list<int> dim_layers) : 
+MLP::MLP(const std::initializer_list<int> & dim_layers) : 
   MLP(std::vector<int>(dim_layers)){
 }
 void MLP::train(const Matrix & data_in, const Matrix & data_out, 

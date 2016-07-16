@@ -18,8 +18,8 @@ class MLP {
 public:
   MLP() = default;
   MLP(int, int, int);
-  MLP(std::vector<int>);
-  MLP(std::initializer_list<int>);
+  MLP(const std::vector<int> &);
+  MLP(const std::initializer_list<int> &);
   MLP(const MLP &) = default;
   MLP(MLP &&) = default;
   MLP & operator=(const MLP &) = default;
